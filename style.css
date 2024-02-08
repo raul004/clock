@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: repeating-linear-gradient(90deg, #4158d0 0%, #c450c0 50%, #ffcc70 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* clock style */
+.clock {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid gray;
+    position: relative;
+}
+
+/* style numbers */
+.clock > .number {
+    --rotation: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: gray;
+    padding: 15px;
+}
+
+/* numbers position*/
+.clock > .number.number-1 {
+    --rotation: 30deg;
+}
+.clock > .number.number-2 {
+    --rotation: 60deg;
+}
+.clock > .number.number-3 {
+    --rotation: 90deg;
+}
+.clock > .number.number-4 {
+    --rotation: 120deg;
+}
+.clock > .number.number-5 {
+    --rotation: 150deg;
+}
+.clock > .number.number-6 {
+    --rotation: 180deg;
+}
+.clock > .number.number-7 {
+    --rotation: 210deg;
+}
+.clock > .number.number-8 {
+    --rotation: 240deg;
+}
+.clock > .number.number-9 {
+    --rotation: 270deg;
+}
+.clock > .number.number-10 {
+    --rotation: 300deg;
+}
+.clock > .number.number-11 {
+    --rotation: 330deg;
+}
+
+/* hand circle style */
+.clock::after {
+    content: '';
+    position: absolute;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(62, 62, 62);
+    top: 50%;
+    left: 50%;
+}
+
+/* hands style */
+.clock > .hand {
+    --rotation: 0;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: gray;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* hand seconds */
+.clock > .hand.seconds {
+    width: 3px;
+    height: 38%;
+    background-color: rgb(255, 65, 65);
+}
+
+/* hand minutes */
+.clock > .hand.minutes {
+    width: 6px;
+    height: 28%;
+    background-color: gray;
+}
+
+/* hand hours */
+.clock > .hand.hours {
+    width: 9px;
+    height: 18%;
+    background-color: rgb(62, 62, 62);
+}
