@@ -15,6 +15,15 @@ body {
     justify-content: center;
 }
 
+.title {
+    position: absolute;
+    color: #eee;
+    font-size: 1rem;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+}
+
 /* clock style */
 .clock {
     width: 450px;
